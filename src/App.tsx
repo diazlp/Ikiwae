@@ -1,10 +1,10 @@
 import './App.css'
-import HeaderLayout from './layout/Header'
+import HomePage from './pages/Home'
 
 function App() {
   return (
     <>
-      <HeaderLayout />
+      <HomePage />
     </>
   )
 }
