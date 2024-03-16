@@ -8,15 +8,15 @@ const Header: React.FC = () => {
 
   return (
     <div
-      className="container border-bottom fixed-top h-25"
-      style={{ backdropFilter: 'blur(2px)' }}
+      className="container border-bottom sticky-top"
+      style={{ backdropFilter: 'blur(10px)' }}
     >
       <div className="row" id="header-default">
-        <figure className="col-10 logo d-flex justify-content-start">
+        <figure className="col-10 d-flex ">
           <a href="http://localhost:5173/">
             <img
               src={ikiwaeLogo}
-              className="mt-4 mb-4 h-25 img-fluid"
+              className="mt-4 mb-4 w-25 img-fluid"
               alt="ikiwae logo"
             />
           </a>
