@@ -8,12 +8,12 @@ const Footer: React.FC = () => {
       <div className="container p-4 pb-1">
         <div className="row">
           <div className="col-lg-6 col-md-12 mb-4 mb-md-0 text-center">
-            <h5 className="fw-bold">MOTTO</h5>
-            <p>MEMBAWA KENYAMANAN KE RUMAH ANDA</p>
+            <h5 className="fw-bold">Motto</h5>
+            <p>Membawa Kenyaman ke Rumah Anda</p>
           </div>
 
           <div className="col-lg-6 col-md-12 mb-4 mb-md-0 text-center">
-            <h5 className="fw-bold">MOTIVASI</h5>
+            <h5 className="fw-bold">Motivasi</h5>
             <p>
               Keberhasilan seorang pria adalah kemampuannya menghasilkan lebih
               banyak uang daripada yang dihabiskan istrinya setiap bulannya.

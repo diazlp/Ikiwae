@@ -1,50 +1,60 @@
 import React from 'react'
-import { Button } from 'react-bootstrap'
-import { FaCartShopping, FaEye } from 'react-icons/fa6'
+import Carousel from 'react-multi-carousel'
+import HeroItem from './Hero-Item'
+
+const responsive = {
+  desktop: {
+    breakpoint: { max: 3000, min: 1024 },
+    items: 1,
+    slidesToSlide: 1
+  },
+  tablet: {
+    breakpoint: { max: 1024, min: 464 },
+    items: 1,
+    slidesToSlide: 2
+  },
+  mobile: {
+    breakpoint: { max: 464, min: 0 },
+    items: 1,
+    slidesToSlide: 1
+  }
+}
 
 const HeroComponent: React.FC = () => {
   return (
-    <div className="container bg-light hero">
-      <div className="row">
-        <div className="col img-hero py-2">
-          <img src="/assets/hero-1.png" alt="Hero Image" className="w-100" />
-        </div>
-        <div className="col align-self-center">
-          <div className="row d-flex flex-column bd-highlight ">
-            <div className="col txt-hero">
-              <h1>DRÖNJÖNS</h1>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat
-              </p>
-            </div>
-            <div className="col prc-hero">
-              <h2>IDR 230.000</h2>
-            </div>
-            <div className="row mt-3 gap-2 w-75">
-              <Button
-                variant={'primary'}
-                className="col d-flex align-items-center gap-2 justify-content-center text-nowrap"
-              >
-                <FaCartShopping />
-                Buy Now!
-              </Button>
-              <Button
-                variant={'secondary'}
-                className="col d-flex align-items-center gap-2 justify-content-center text-nowrap"
-              >
-                <FaEye />
-                View Product
-              </Button>
-              {/* <a href="#" class="btn btn-hero buynow me-3" style="background-color: #003399; color: white"><i class="fa-solid fa-cart-shopping me-2"></i> Buy Now!</a>
-                            <a href="#" class="btn btn-outline-dark btn-hero"><i class="fa-solid fa-eye me-2"></i>View Product</a> */}
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <Carousel
+      swipeable={false}
+      draggable={false}
+      responsive={responsive}
+      ssr={true} // means to render carousel on server-side.
+      infinite
+      autoPlay
+      autoPlaySpeed={4700}
+      transitionDuration={500}
+      containerClass="carousel-container"
+      removeArrowOnDeviceType={['tablet', 'mobile']}
+      dotListClass="custom-dot-list-style"
+      itemClass="carousel-item-padding-40-px"
+    >
+      <HeroItem
+        src="/assets/hero-1.png"
+        title="DRÖNJÖNS"
+        description="Kursi sederhana untuk semua umur"
+        price="IDR 230.000"
+      />
+      <HeroItem
+        src="/assets/hero-2.png"
+        title="TROLLBERGET"
+        description="Penyangga berdiri/duduk aktif, glose hitam"
+        price="IDR 1.299.000"
+      />
+      <HeroItem
+        src="/assets/hero-3.png"
+        title="MALSKÄR / LOBERGET"
+        description="Kursi putar + bantalan, putih/abu-abu tua"
+        price="IDR 709.000"
+      />
+    </Carousel>
   )
 }
 
