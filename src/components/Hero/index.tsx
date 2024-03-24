@@ -1,6 +1,7 @@
 import React from 'react'
 import Carousel from 'react-multi-carousel'
 import HeroItem from './Hero-Item'
+import { heroProduct } from '../../lib/constant'
 
 const responsive = {
   desktop: {
@@ -36,24 +37,15 @@ const HeroComponent: React.FC = () => {
       dotListClass="custom-dot-list-style"
       itemClass="carousel-item-padding-40-px"
     >
-      <HeroItem
-        src="/assets/hero-1.png"
-        title="DRÖNJÖNS"
-        description="Kursi sederhana untuk semua umur"
-        price="IDR 230.000"
-      />
-      <HeroItem
-        src="/assets/hero-2.png"
-        title="TROLLBERGET"
-        description="Penyangga berdiri/duduk aktif, glose hitam"
-        price="IDR 1.299.000"
-      />
-      <HeroItem
-        src="/assets/hero-3.png"
-        title="MALSKÄR / LOBERGET"
-        description="Kursi putar + bantalan, putih/abu-abu tua"
-        price="IDR 709.000"
-      />
+      {heroProduct.map((hero, index) => (
+        <HeroItem
+          key={index}
+          src={hero.src}
+          title={hero.title}
+          description={hero.description}
+          price={hero.price}
+        />
+      ))}
     </Carousel>
   )
 }
