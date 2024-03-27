@@ -16,7 +16,7 @@ const Footer: React.FC = () => {
             <h5 className="fw-bold">Motivasi</h5>
             <p>
               Keberhasilan seorang pria adalah kemampuannya menghasilkan lebih
-              banyak uang daripada yang dihabiskan istrinya setiap bulannya.
+              banyak uang daripada yang dihabiskan istrinya setiap bulannya
             </p>
           </div>
         </div>

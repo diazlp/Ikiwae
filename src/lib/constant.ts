@@ -52,3 +52,30 @@ export const mejaProduct: Product[] = [
     price: 2799000
   }
 ]
+
+export const sofaProduct: Product[] = [
+  {
+    src: '/assets/sofa/ektorp.jpg',
+    title: 'EKTORP',
+    description: 'sofa 3 dudukan, Hakebo abu-abu-hijau',
+    price: 6295000
+  },
+  {
+    src: '/assets/sofa/hemlingby.jpg',
+    title: 'HEMLINGBY',
+    description: 'sofa 2 dudukan, Bomstad hitam',
+    price: 2995000
+  },
+  {
+    src: '/assets/sofa/linanas.jpg',
+    title: 'LINANÄS',
+    description: 'sofa 2 dudukan, Vissle krem',
+    price: 3495000
+  },
+  {
+    src: '/assets/sofa/vimle.jpg',
+    title: 'VIMLE',
+    description: 'sofa 3 dudukan, Hallarp krem',
+    price: 14499000
+  }
+]
