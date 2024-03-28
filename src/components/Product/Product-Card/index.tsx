@@ -20,11 +20,11 @@ const ProductCard: React.FC<ProductCardProps> = ({
       <div className="card">
         <img src={src} alt={title} />
 
-        <div className="card-body">
+        <div className="card-body d-flex flex-column">
           <h5 className="card-title fs-3 fw-bold">{title}</h5>
           <p className="card-text">{description}</p>
 
-          <div className="d-flex gap-3 align-items-center">
+          <div className="mt-auto d-flex gap-3 align-items-center">
             <button
               type="button"
               className="d-flex align-items-center gap-2 px-2 text-primary-emphasis btn btn-warning"

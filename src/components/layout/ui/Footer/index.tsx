@@ -30,12 +30,7 @@ const Footer: React.FC = () => {
         </figure>
       </div>
 
-      <div
-        className="text-center p-3"
-        style={{
-          backgroundColor: 'rgba(0, 0, 0, 0.178)'
-        }}
-      >
+      <div className="text-center p-3 bg-secondary-subtle">
         Copyright &copy; {new Date().getFullYear()} <b>IKIWAE</b>. All Rights
         Reserved.
       </div>

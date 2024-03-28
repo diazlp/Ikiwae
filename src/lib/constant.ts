@@ -79,3 +79,32 @@ export const sofaProduct: Product[] = [
     price: 14499000
   }
 ]
+
+export const kasurProduct: Product[] = [
+  {
+    src: '/assets/kasur/songesand.jpg',
+    title: 'SONGESAND',
+    description: 'rngka tmpt tdr dg 4 ktk pnympnn, putih/Luröy, 180x200 cm',
+    price: 5899000
+  },
+  {
+    src: '/assets/kasur/slattum-single.jpg',
+    title: 'SLATTUM',
+    description:
+      'rangka tempat tidur berpelapis, Vissle abu-abu tua, 90x200 cm',
+    price: 1699000
+  },
+  {
+    src: '/assets/kasur/slattum.jpg',
+    title: 'SLATTUM',
+    description: 'rangka tempat tidur berpelapis, Bomstad hitam, 180x200 cm',
+    price: 2499000
+  },
+  {
+    src: '/assets/kasur/platsa.jpg',
+    title: 'PLATSA',
+    description:
+      'rangka tmpt tdr dg 8 pntu + 4 lc, putih/Fonnes, 142x244x223 cm',
+    price: 14050000
+  }
+]

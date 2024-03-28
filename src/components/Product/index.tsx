@@ -1,5 +1,5 @@
 import React from 'react'
-import { mejaProduct, sofaProduct } from '../../lib/constant'
+import { kasurProduct, mejaProduct, sofaProduct } from '../../lib/constant'
 import ProductCard from './Product-Card'
 
 const ProductComponent: React.FC = () => {
@@ -29,6 +29,20 @@ const ProductComponent: React.FC = () => {
             title={sofa.title}
             description={sofa.description}
             price={sofa.price}
+          />
+        ))}
+      </div>
+
+      <h4 className="text-start display-4 mt-5">Kasur</h4>
+
+      <div className="row">
+        {kasurProduct.map((tt, index) => (
+          <ProductCard
+            key={index}
+            src={tt.src}
+            title={tt.title}
+            description={tt.description}
+            price={tt.price}
           />
         ))}
       </div>
