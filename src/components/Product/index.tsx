@@ -1,5 +1,10 @@
 import React from 'react'
-import { kasurProduct, mejaProduct, sofaProduct } from '../../lib/constant'
+import {
+  kasurProduct,
+  lampuProduct,
+  mejaProduct,
+  sofaProduct
+} from '../../lib/constant'
 import ProductCard from './Product-Card'
 
 const ProductComponent: React.FC = () => {
@@ -43,6 +48,20 @@ const ProductComponent: React.FC = () => {
             title={tt.title}
             description={tt.description}
             price={tt.price}
+          />
+        ))}
+      </div>
+
+      <h4 className="text-start display-4 mt-5">Lampu</h4>
+
+      <div className="row">
+        {lampuProduct.map((lamp, index) => (
+          <ProductCard
+            key={index}
+            src={lamp.src}
+            title={lamp.title}
+            description={lamp.description}
+            price={lamp.price}
           />
         ))}
       </div>

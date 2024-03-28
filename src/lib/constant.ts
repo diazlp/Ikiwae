@@ -84,7 +84,7 @@ export const kasurProduct: Product[] = [
   {
     src: '/assets/kasur/songesand.jpg',
     title: 'SONGESAND',
-    description: 'rngka tmpt tdr dg 4 ktk pnympnn, putih/Luröy, 180x200 cm',
+    description: 'rangka tmpt tdr dg 4 ktk pnympnn, putih/Luröy, 180x200 cm',
     price: 5899000
   },
   {
@@ -106,5 +106,32 @@ export const kasurProduct: Product[] = [
     description:
       'rangka tmpt tdr dg 8 pntu + 4 lc, putih/Fonnes, 142x244x223 cm',
     price: 14050000
+  }
+]
+
+export const lampuProduct: Product[] = [
+  {
+    src: '/assets/lampu/evedal.jpg',
+    title: 'EVEDAL',
+    description: 'lampu lantai, marmer/abu-abu',
+    price: 4449000
+  },
+  {
+    src: '/assets/lampu/hemma.jpg',
+    title: 'HEMMA',
+    description: 'lampu gantung, putih',
+    price: 129900
+  },
+  {
+    src: '/assets/lampu/lauters.jpg',
+    title: 'LAUTERS',
+    description: 'lampu lantai, kayu ash/putih',
+    price: 899000
+  },
+  {
+    src: '/assets/lampu/loknas.jpg',
+    title: 'LÖKNÄS/SKAFTET',
+    description: 'lampu lantai, melengkung, biru warna perak/hitam',
+    price: 1798000
   }
 ]
