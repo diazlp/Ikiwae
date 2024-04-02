@@ -1,10 +1,11 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { FaCartShopping } from 'react-icons/fa6'
+import { useCheckoutProduct } from '../../../../contexts/CheckoutContext'
 
 import ikiwaeLogo from '/ikiwae-logo.png'
 
 const Header: React.FC = () => {
-  const [count] = useState<number>(0)
+  const { totalQty } = useCheckoutProduct()
 
   return (
     <div
@@ -29,7 +30,9 @@ const Header: React.FC = () => {
               <div className="col">
                 <FaCartShopping color={'#003399'} size={'30px'} />
               </div>
-              <div className="col fw-bold text-white bg-warning">{count}</div>
+              <div className="col fw-bold text-white bg-warning">
+                {totalQty}
+              </div>
             </div>
           </button>
         </div>

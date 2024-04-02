@@ -1,6 +1,7 @@
 import React from 'react'
 import { FaShoppingCart } from 'react-icons/fa'
 import { Utils } from '../../../lib/utils'
+import { useCheckoutProduct } from '../../../contexts/CheckoutContext'
 
 type ProductCardProps = {
   src: string
@@ -15,6 +16,16 @@ const ProductCard: React.FC<ProductCardProps> = ({
   description,
   price
 }) => {
+  const { addProduct } = useCheckoutProduct()
+
+  const handleAddProduct = () => {
+    addProduct({
+      title,
+      description,
+      price
+    })
+  }
+
   return (
     <div className="col-3 d-flex justify-content-between">
       <div className="card">
@@ -28,6 +39,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
             <button
               type="button"
               className="d-flex align-items-center gap-2 px-2 text-primary-emphasis btn btn-warning"
+              onClick={handleAddProduct}
             >
               <FaShoppingCart />
               Checkout
