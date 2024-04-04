@@ -20,6 +20,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
 
   const handleAddProduct = () => {
     addProduct({
+      src,
       title,
       description,
       price

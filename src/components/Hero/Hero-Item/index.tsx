@@ -1,12 +1,13 @@
 import React from 'react'
 import { Button } from 'react-bootstrap'
 import { FaCartShopping, FaEye } from 'react-icons/fa6'
+import { useCheckoutProduct } from '../../../contexts/CheckoutContext'
 
 type HeroItemProps = {
   src: string
   title: string
   description: string
-  price: string
+  price: number
 }
 
 const HeroItem: React.FC<HeroItemProps> = ({
@@ -15,6 +16,17 @@ const HeroItem: React.FC<HeroItemProps> = ({
   description,
   price
 }) => {
+  const { addProduct } = useCheckoutProduct()
+
+  const handleAddProduct = () => {
+    addProduct({
+      src,
+      title,
+      description,
+      price
+    })
+  }
+
   return (
     <div className="container bg-light hero">
       <div className="row">
@@ -34,6 +46,7 @@ const HeroItem: React.FC<HeroItemProps> = ({
               <Button
                 variant={'primary'}
                 className="col d-flex align-items-center gap-2 justify-content-center text-nowrap"
+                onClick={handleAddProduct}
               >
                 <FaCartShopping />
                 Buy Now!

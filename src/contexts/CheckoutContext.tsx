@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useState } from 'react'
 
 interface CheckoutProduct {
+  src: string
   title: string
   description: string
   price: number
