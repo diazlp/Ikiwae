@@ -3,8 +3,10 @@ import { FaCartShopping } from 'react-icons/fa6'
 import { useCheckoutProduct } from '../../../../contexts/CheckoutContext'
 
 import ikiwaeLogo from '/ikiwae-logo.png'
+import { useNavigate } from 'react-router-dom'
 
 const Header: React.FC = () => {
+  const navigate = useNavigate()
   const { totalQty } = useCheckoutProduct()
 
   return (
@@ -24,7 +26,12 @@ const Header: React.FC = () => {
         </figure>
 
         <div className="col d-flex align-items-start mt-5">
-          <button type="button" className="btn" data-bs-toggle="modal">
+          <button
+            type="button"
+            className="btn"
+            data-bs-toggle="modal"
+            onClick={() => navigate('/invoice')}
+          >
             {/* <!-- data-bs-toggle="modal" href="#exampleModalToggle" role="button" --> */}
             <div className="row d-flex align-items-center p-3 border gap-2 justify-items-between">
               <div className="col">
