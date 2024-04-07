@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState } from 'react'
 
-interface CheckoutProduct {
+export interface CheckoutProduct {
   src: string
   title: string
   description: string
@@ -21,7 +21,7 @@ interface CheckoutProviderProps {
   children: React.ReactNode
 }
 
-export const useCheckoutProduct = () => {
+export const useCheckoutProduct = (): CheckoutContextType => {
   const context = useContext(CheckoutContext)
   if (!context) {
     throw new Error('useCheckout must be used within a CheckoutProvider')
