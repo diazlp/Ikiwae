@@ -2,6 +2,7 @@ import React from 'react'
 import { Button } from 'react-bootstrap'
 import { FaCartShopping, FaEye } from 'react-icons/fa6'
 import { useCheckoutProduct } from '../../../contexts/CheckoutContext'
+import { Utils } from '../../../lib/utils'
 
 type HeroItemProps = {
   src: string
@@ -40,7 +41,7 @@ const HeroItem: React.FC<HeroItemProps> = ({
               <p>{description}</p>
             </div>
             <div className="col prc-hero">
-              <h2>{price}</h2>
+              <h2>{Utils.formatCurrency(price)}</h2>
             </div>
             <div className="row mt-3 gap-2 w-75">
               <Button

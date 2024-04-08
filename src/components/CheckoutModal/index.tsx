@@ -1,17 +1,21 @@
 import React from 'react'
 import { Modal, Button } from 'react-bootstrap'
 import { CheckoutProduct } from '../../contexts/CheckoutContext'
+import { Utils } from '../../lib/utils'
+import { CiCircleMinus } from 'react-icons/ci'
 
 type CheckoutModalProps = {
   visible: boolean
   handleCloseModal: any
   checkoutProducts: { product: CheckoutProduct; quantity: number }[]
+  totalPrice: number
 }
 
 const CheckoutModal: React.FC<CheckoutModalProps> = ({
   visible,
   handleCloseModal,
-  checkoutProducts
+  checkoutProducts,
+  totalPrice
 }) => {
   if (visible) {
     return (
@@ -22,24 +26,33 @@ const CheckoutModal: React.FC<CheckoutModalProps> = ({
 
         <Modal.Body className="d-flex align-items-center justify-content-center h3">
           {checkoutProducts.length ? (
-            <div className="my-5">
-              {checkoutProducts.map(({ product }) => (
-                <div
-                  className="d-flex align-items-center"
-                  style={{ border: '1px solid red' }}
-                >
+            <div className="my-1">
+              {checkoutProducts.map(({ product }, index) => (
+                <div className="d-flex align-items-center" key={index}>
                   <div
-                    className="row co-prod pb-3 mt-2 d-flex border align-items-center px-2"
+                    className="row pb-3 mt-2 d-flex border align-items-center px-2"
                     key={product.title}
                   >
-                    <div className="col-2 img-co-prod pt-3">
-                      <img src={product.src} alt={product.title} />
+                    <div className="col-2 pt-3">
+                      <img
+                        src={product.src}
+                        alt={product.title}
+                        className="w-100"
+                      />
                     </div>
-                    <div className="col-3 nameprod-co-prod d-flex flex-column bd-highlight">
+                    <div className="col-3 mt-3">
                       <h2 className="bd-highlight">{product.title}</h2>
                     </div>
-                    <div className="col-3 harga-co-prod d-flex justify-content-center">
-                      <h2>IDR {product.price}</h2>
+                    <div className="col-3 mt-3">
+                      <h2>{Utils.formatCurrency(product.price)}</h2>
+                    </div>
+                    <div className="col-3 mt-1 justify-self-end">
+                      <button
+                        type="button"
+                        className="btn btn-danger rounded-0"
+                      >
+                        <CiCircleMinus size={25} />
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -54,7 +67,7 @@ const CheckoutModal: React.FC<CheckoutModalProps> = ({
           <p className="h4">Total</p>
 
           <div className="d-flex align-items-center h4">
-            <span>IDR 0</span>
+            <span>{Utils.formatCurrency(totalPrice)}</span>
             <div className="mx-2"></div>
             <Button
               variant="ghost"

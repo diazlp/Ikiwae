@@ -2,7 +2,6 @@ import React from 'react'
 import Carousel from 'react-multi-carousel'
 import HeroItem from './Hero-Item'
 import { heroProduct } from '../../lib/constant'
-import { Utils } from '../../lib/utils'
 
 const responsive = {
   desktop: {
@@ -44,7 +43,7 @@ const HeroComponent: React.FC = () => {
           src={hero.src}
           title={hero.title}
           description={hero.description}
-          price={Utils.formatCurrency(hero.price)}
+          price={hero.price}
         />
       ))}
     </Carousel>

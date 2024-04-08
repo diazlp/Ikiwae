@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from 'react'
+import React, { createContext, useContext, useMemo, useState } from 'react'
 
 export interface CheckoutProduct {
   src: string
@@ -11,6 +11,7 @@ interface CheckoutContextType {
   totalQty: number
   products: { product: CheckoutProduct; quantity: number }[]
   addProduct: (product: CheckoutProduct) => void
+  calculateTotalPrice: number
 }
 
 const CheckoutContext = createContext<CheckoutContextType | undefined>(
@@ -53,10 +54,19 @@ const CheckoutProvider: React.FC<CheckoutProviderProps> = ({ children }) => {
     setTotalQty((prevQty) => prevQty + 1)
   }
 
+  const calculateTotalPrice = useMemo(() => {
+    let totalPrice = 0
+    products.forEach(({ product, quantity }) => {
+      totalPrice += product.price * quantity
+    })
+    return totalPrice
+  }, [products])
+
   const contextValue: CheckoutContextType = {
     totalQty,
     products,
-    addProduct
+    addProduct,
+    calculateTotalPrice
   }
 
   return (
