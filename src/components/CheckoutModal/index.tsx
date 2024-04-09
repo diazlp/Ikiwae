@@ -7,6 +7,7 @@ import { CiCircleMinus } from 'react-icons/ci'
 type CheckoutModalProps = {
   visible: boolean
   handleCloseModal: any
+  handleDeleteProduct: (product: CheckoutProduct) => void
   checkoutProducts: { product: CheckoutProduct; quantity: number }[]
   totalPrice: number
 }
@@ -14,6 +15,7 @@ type CheckoutModalProps = {
 const CheckoutModal: React.FC<CheckoutModalProps> = ({
   visible,
   handleCloseModal,
+  handleDeleteProduct,
   checkoutProducts,
   totalPrice
 }) => {
@@ -50,6 +52,7 @@ const CheckoutModal: React.FC<CheckoutModalProps> = ({
                       <button
                         type="button"
                         className="btn btn-danger rounded-0"
+                        onClick={() => handleDeleteProduct(product)}
                       >
                         <CiCircleMinus size={25} />
                       </button>

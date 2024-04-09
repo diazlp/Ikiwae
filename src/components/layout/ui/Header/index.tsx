@@ -9,7 +9,8 @@ import ikiwaeLogo from '/ikiwae-logo.png'
 const Header: React.FC = () => {
   const [showCheckoutModal, setShowCheckoutModal] = useState<boolean>(false)
   // const navigate = useNavigate()
-  const { totalQty, products, calculateTotalPrice } = useCheckoutProduct()
+  const { deleteProduct, totalQty, products, calculateTotalPrice } =
+    useCheckoutProduct()
 
   return (
     <Fragment>
@@ -51,6 +52,7 @@ const Header: React.FC = () => {
       <CheckoutModal
         visible={showCheckoutModal}
         handleCloseModal={() => setShowCheckoutModal(false)}
+        handleDeleteProduct={deleteProduct}
         checkoutProducts={products}
         totalPrice={calculateTotalPrice}
       />

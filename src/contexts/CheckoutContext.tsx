@@ -11,6 +11,7 @@ interface CheckoutContextType {
   totalQty: number
   products: { product: CheckoutProduct; quantity: number }[]
   addProduct: (product: CheckoutProduct) => void
+  deleteProduct: (product: CheckoutProduct) => void
   calculateTotalPrice: number
 }
 
@@ -54,6 +55,19 @@ const CheckoutProvider: React.FC<CheckoutProviderProps> = ({ children }) => {
     setTotalQty((prevQty) => prevQty + 1)
   }
 
+  const deleteProduct = (product: CheckoutProduct) => {
+    const updatedProducts = products.filter(
+      (p) => p.product.title !== product.title
+    )
+    const deletedProduct = products.find(
+      (p) => p.product.title === product.title
+    )
+    if (deletedProduct) {
+      setTotalQty((prevQty) => prevQty - deletedProduct.quantity)
+      setProducts(updatedProducts)
+    }
+  }
+
   const calculateTotalPrice = useMemo(() => {
     let totalPrice = 0
     products.forEach(({ product, quantity }) => {
@@ -66,6 +80,7 @@ const CheckoutProvider: React.FC<CheckoutProviderProps> = ({ children }) => {
     totalQty,
     products,
     addProduct,
+    deleteProduct,
     calculateTotalPrice
   }
 
