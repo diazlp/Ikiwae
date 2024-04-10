@@ -45,10 +45,38 @@ const CheckoutModal: React.FC<CheckoutModalProps> = ({
                     <div className="col-3 mt-3">
                       <h2 className="bd-highlight">{product.title}</h2>
                     </div>
-                    <div className="col-3 mt-3">
+                    <div className="col-4 mt-3">
                       <h2>{Utils.formatCurrency(product.price)}</h2>
                     </div>
-                    <div className="col-3 mt-1 justify-self-end">
+                    <div className="col-2 counter-co-prod d-flex justify-content-center">
+                      <div
+                        className="btn-group"
+                        role="group"
+                        aria-label="Basic outlined example"
+                      >
+                        <button
+                          type="button"
+                          className="btn btn-outline-dark rounded-0 increment-button"
+                        >
+                          +
+                        </button>
+                        <div className="form-control form-control-sm border-0 px-3">
+                          <span
+                            style={{ fontSize: '20px' }}
+                            className="total-container"
+                          >
+                            1
+                          </span>
+                        </div>
+                        <button
+                          type="button"
+                          className="btn btn-outline-dark rounded-0 decrement-button"
+                        >
+                          -
+                        </button>
+                      </div>
+                    </div>
+                    <div className="col-1 justify-self-end">
                       <button
                         type="button"
                         className="btn btn-danger rounded-0"
