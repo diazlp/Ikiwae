@@ -7,6 +7,7 @@ import { CiCircleMinus } from 'react-icons/ci'
 type CheckoutModalProps = {
   visible: boolean
   handleCloseModal: any
+  handleIncrementQty: (product: CheckoutProduct) => void
   handleDeleteProduct: (product: CheckoutProduct) => void
   checkoutProducts: { product: CheckoutProduct; quantity: number }[]
   totalPrice: number
@@ -15,6 +16,7 @@ type CheckoutModalProps = {
 const CheckoutModal: React.FC<CheckoutModalProps> = ({
   visible,
   handleCloseModal,
+  handleIncrementQty,
   handleDeleteProduct,
   checkoutProducts,
   totalPrice
@@ -29,7 +31,7 @@ const CheckoutModal: React.FC<CheckoutModalProps> = ({
         <Modal.Body className="d-flex align-items-center justify-content-center h3">
           {checkoutProducts.length ? (
             <div className="my-1">
-              {checkoutProducts.map(({ product }, index) => (
+              {checkoutProducts.map(({ product, quantity }, index) => (
                 <div className="d-flex align-items-center" key={index}>
                   <div
                     className="row pb-3 mt-2 d-flex border align-items-center px-2"
@@ -57,6 +59,7 @@ const CheckoutModal: React.FC<CheckoutModalProps> = ({
                         <button
                           type="button"
                           className="btn btn-outline-dark rounded-0 increment-button"
+                          onClick={() => handleIncrementQty(product)}
                         >
                           +
                         </button>
@@ -65,7 +68,7 @@ const CheckoutModal: React.FC<CheckoutModalProps> = ({
                             style={{ fontSize: '20px' }}
                             className="total-container"
                           >
-                            1
+                            {quantity}
                           </span>
                         </div>
                         <button
