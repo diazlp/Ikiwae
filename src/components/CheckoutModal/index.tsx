@@ -8,6 +8,7 @@ type CheckoutModalProps = {
   visible: boolean
   handleCloseModal: any
   handleIncrementQty: (product: CheckoutProduct) => void
+  handleDecrementQty: (product: CheckoutProduct) => void
   handleDeleteProduct: (product: CheckoutProduct) => void
   checkoutProducts: { product: CheckoutProduct; quantity: number }[]
   totalPrice: number
@@ -17,6 +18,7 @@ const CheckoutModal: React.FC<CheckoutModalProps> = ({
   visible,
   handleCloseModal,
   handleIncrementQty,
+  handleDecrementQty,
   handleDeleteProduct,
   checkoutProducts,
   totalPrice
@@ -74,6 +76,7 @@ const CheckoutModal: React.FC<CheckoutModalProps> = ({
                         <button
                           type="button"
                           className="btn btn-outline-dark rounded-0 decrement-button"
+                          onClick={() => handleDecrementQty(product)}
                         >
                           -
                         </button>

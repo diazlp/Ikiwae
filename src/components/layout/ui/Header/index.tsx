@@ -11,6 +11,7 @@ const Header: React.FC = () => {
   // const navigate = useNavigate()
   const {
     incrementQty,
+    decrementQty,
     deleteProduct,
     totalQty,
     products,
@@ -58,6 +59,7 @@ const Header: React.FC = () => {
         visible={showCheckoutModal}
         handleCloseModal={() => setShowCheckoutModal(false)}
         handleIncrementQty={incrementQty}
+        handleDecrementQty={decrementQty}
         handleDeleteProduct={deleteProduct}
         checkoutProducts={products}
         totalPrice={calculateTotalPrice}

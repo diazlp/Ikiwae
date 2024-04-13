@@ -12,6 +12,7 @@ interface CheckoutContextType {
   products: { product: CheckoutProduct; quantity: number }[]
   addProduct: (product: CheckoutProduct) => void
   incrementQty: (product: CheckoutProduct) => void
+  decrementQty: (product: CheckoutProduct) => void
   deleteProduct: (product: CheckoutProduct) => void
   calculateTotalPrice: number
 }
@@ -71,6 +72,24 @@ const CheckoutProvider: React.FC<CheckoutProviderProps> = ({ children }) => {
     }
   }
 
+  const decrementQty = (product: CheckoutProduct) => {
+    const existingProductIndex = products.findIndex(
+      (p) => p.product.title === product.title
+    )
+
+    if (existingProductIndex !== -1) {
+      const updatedProducts = [...products]
+      // Ensure quantity doesn't go below 1
+      if (updatedProducts[existingProductIndex].quantity > 1) {
+        updatedProducts[existingProductIndex].quantity--
+        setProducts(updatedProducts)
+
+        // Decrement total quantity
+        setTotalQty((prevQty) => prevQty - 1)
+      }
+    }
+  }
+
   const deleteProduct = (product: CheckoutProduct) => {
     const updatedProducts = products.filter(
       (p) => p.product.title !== product.title
@@ -97,6 +116,7 @@ const CheckoutProvider: React.FC<CheckoutProviderProps> = ({ children }) => {
     products,
     addProduct,
     incrementQty,
+    decrementQty,
     deleteProduct,
     calculateTotalPrice
   }
