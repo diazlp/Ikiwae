@@ -5,8 +5,8 @@ import Footer from '../../components/layout/ui/Footer'
 const InvoiceContainer: React.FC = () => {
   return (
     <Fragment>
-      <Header />
-      <Footer />
+      {/* <Header /> */}
+      {/* <Footer /> */}
     </Fragment>
   )
 }
