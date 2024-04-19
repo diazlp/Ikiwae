@@ -5,6 +5,7 @@ import { useCheckoutProduct } from '../../../../contexts/CheckoutContext'
 import CheckoutModal from '../../../CheckoutModal'
 
 import ikiwaeLogo from '/ikiwae-logo.png'
+import SuccessModal from '../../../SuccessModal'
 
 type HeaderProps = {
   isLogoCentered: boolean
@@ -12,6 +13,8 @@ type HeaderProps = {
 
 const Header: React.FC<HeaderProps> = ({ isLogoCentered }) => {
   const [showCheckoutModal, setShowCheckoutModal] = useState<boolean>(false)
+  const [showSuccessModal, setShowSuccessModal] = useState<boolean>(false)
+
   const navigate = useNavigate()
   const {
     incrementQty,
@@ -84,6 +87,11 @@ const Header: React.FC<HeaderProps> = ({ isLogoCentered }) => {
         handleDeleteProduct={deleteProduct}
         checkoutProducts={products}
         totalPrice={calculateTotalPrice}
+      />
+
+      <SuccessModal
+        visible={showSuccessModal}
+        handleCloseModal={() => setShowSuccessModal(false)}
       />
     </Fragment>
   )

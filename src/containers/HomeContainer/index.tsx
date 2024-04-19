@@ -6,7 +6,7 @@ import Footer from '../../components/layout/ui/Footer'
 const HomeContainer: React.FC = () => {
   return (
     <Fragment>
-      <Header />
+      <Header isLogoCentered={false} />
       <MainLayout />
       <Footer />
     </Fragment>
