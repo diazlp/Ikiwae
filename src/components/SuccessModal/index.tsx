@@ -1,6 +1,7 @@
 import React from 'react'
 import { Modal } from 'react-bootstrap'
 import { FaFileInvoiceDollar, FaShoppingBag } from 'react-icons/fa'
+import { useNavigate } from 'react-router-dom'
 
 type SuccessModalProps = {
   visible: boolean
@@ -11,6 +12,8 @@ const SuccessModal: React.FC<SuccessModalProps> = ({
   visible,
   handleCloseModal
 }) => {
+  const navigate = useNavigate()
+
   if (visible) {
     return (
       <Modal show={true} onHide={handleCloseModal}>
@@ -26,7 +29,7 @@ const SuccessModal: React.FC<SuccessModalProps> = ({
               <button
                 type="button"
                 className="d-flex align-items-center gap-2 px-2 text-white btn btn-primary text-nowrap fs-5"
-                // onClick={handleAddProduct}
+                onClick={() => navigate('/invoice')}
               >
                 <FaFileInvoiceDollar />
                 Go to Invoice
@@ -36,7 +39,7 @@ const SuccessModal: React.FC<SuccessModalProps> = ({
               <button
                 type="button"
                 className="d-flex align-items-center gap-2 px-2 text-white btn btn-warning fs-5"
-                // onClick={handleAddProduct}
+                onClick={handleCloseModal}
               >
                 <FaShoppingBag />
                 Back to Shop

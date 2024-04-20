@@ -85,6 +85,7 @@ const Header: React.FC<HeaderProps> = ({ isLogoCentered }) => {
         handleIncrementQty={incrementQty}
         handleDecrementQty={decrementQty}
         handleDeleteProduct={deleteProduct}
+        handlePaymentClick={() => setShowSuccessModal(true)}
         checkoutProducts={products}
         totalPrice={calculateTotalPrice}
       />

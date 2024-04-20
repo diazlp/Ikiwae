@@ -3,7 +3,6 @@ import { Modal, Button } from 'react-bootstrap'
 import { CheckoutProduct } from '../../contexts/CheckoutContext'
 import { Utils } from '../../lib/utils'
 import { CiCircleMinus } from 'react-icons/ci'
-import { useNavigate } from 'react-router-dom'
 
 type CheckoutModalProps = {
   visible: boolean
@@ -11,6 +10,7 @@ type CheckoutModalProps = {
   handleIncrementQty: (product: CheckoutProduct) => void
   handleDecrementQty: (product: CheckoutProduct) => void
   handleDeleteProduct: (product: CheckoutProduct) => void
+  handlePaymentClick: () => void
   checkoutProducts: { product: CheckoutProduct; quantity: number }[]
   totalPrice: number
 }
@@ -21,10 +21,14 @@ const CheckoutModal: React.FC<CheckoutModalProps> = ({
   handleIncrementQty,
   handleDecrementQty,
   handleDeleteProduct,
+  handlePaymentClick,
   checkoutProducts,
   totalPrice
 }) => {
-  const navigate = useNavigate()
+  const onPaymentClick = (): void => {
+    handleCloseModal()
+    handlePaymentClick()
+  }
 
   if (visible) {
     return (
@@ -111,7 +115,7 @@ const CheckoutModal: React.FC<CheckoutModalProps> = ({
             <div className="mx-2"></div>
             <Button
               variant="ghost"
-              onClick={() => navigate('/invoice')}
+              onClick={onPaymentClick}
               className="text-primary bg-white h4"
               disabled={!checkoutProducts.length}
             >
