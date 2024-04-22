@@ -34,7 +34,7 @@ const Header: React.FC<HeaderProps> = ({ isLogoCentered }) => {
         {isLogoCentered ? (
           <div className="row justify-content-center" id="header-default">
             <figure
-              className="col-10 d-flex justify-content-center "
+              className="col-10 d-flex justify-content-center"
               onClick={() => navigate('/')}
               style={{
                 width: '180px'
@@ -49,7 +49,7 @@ const Header: React.FC<HeaderProps> = ({ isLogoCentered }) => {
           </div>
         ) : (
           <div className="row" id="header-default">
-            <figure className="col-10 d-flex ">
+            <figure className="col-10 d-flex">
               <a href="http://localhost:5173/">
                 <img
                   src={ikiwaeLogo}
