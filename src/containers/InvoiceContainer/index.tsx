@@ -1,8 +1,12 @@
 import React, { Fragment } from 'react'
 import Header from '../../components/layout/ui/Header'
+import { useCheckoutProduct } from '../../contexts/CheckoutContext'
+import { Utils } from '../../lib/utils'
 
 const InvoiceContainer: React.FC = () => {
   const currentYear = new Date().getFullYear()
+
+  const { products, calculateTotalPrice } = useCheckoutProduct()
 
   return (
     <Fragment>
@@ -37,10 +41,28 @@ const InvoiceContainer: React.FC = () => {
               </div>
             </div>
 
-            <div
-              className="row mt-2 co-prod pb-3 d-flex border align-items-center px-2"
-              id="invoice-item"
-            ></div>
+            <div className="row my-2 co-prod pb-3 d-flex border align-items-center">
+              {products.map(({ product, quantity }) => (
+                <Fragment>
+                  <div className="col-2 pt-3">
+                    <img
+                      src={product.src}
+                      alt={product.title}
+                      className="w-100"
+                    />
+                  </div>
+                  <div className="col-4">
+                    <h4 className="bd-highlight">{product.title}</h4>
+                  </div>
+                  <div className="col-4">
+                    <h4>{Utils.formatCurrency(product.price)}</h4>
+                  </div>
+                  <div className="col-1">
+                    <h4>{quantity}</h4>
+                  </div>
+                </Fragment>
+              ))}
+            </div>
           </div>
 
           <div className="col bg-light flex-column mt-2 bd-highlight footer-inv bd-highlight">
@@ -73,7 +95,7 @@ const InvoiceContainer: React.FC = () => {
               </div>
             </div>
 
-            <div className="row total-number mt-5 bg-primary text-white">
+            <div className="row total-number my-5 bg-primary text-white">
               <div className="row my-3 align-items-center">
                 <div className="col-6 offset-1">
                   <h2>Total</h2>
