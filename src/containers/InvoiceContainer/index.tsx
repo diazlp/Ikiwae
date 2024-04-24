@@ -72,7 +72,7 @@ const InvoiceContainer: React.FC = () => {
                   <h2>Sub Total</h2>
                 </div>
                 <div className="col d-flex justify-content-end total-payment">
-                  IDR X
+                  IDR {calculateTotalPrice}
                 </div>
               </div>
 
