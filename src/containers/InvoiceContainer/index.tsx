@@ -80,7 +80,7 @@ const InvoiceContainer: React.FC = () => {
                 <div className="col-6 offset-1">
                   <h2 className="fs-4">Discount</h2>
                 </div>
-                <div className="col d-flex justify-content-end discount-number text-warning">
+                <div className="col d-flex justify-content-end discount-number text-primary">
                   <h2 className="fs-4">- IDR 0</h2>
                 </div>
               </div>
