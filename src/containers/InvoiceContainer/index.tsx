@@ -89,7 +89,7 @@ const InvoiceContainer: React.FC = () => {
                 <div className="col-6 offset-1">
                   <h2 className="fs-4">Total Tax</h2>
                 </div>
-                <div className="col d-flex justify-content-end discount-number">
+                <div className="col d-flex justify-content-end discount-number text-danger">
                   <h2 className="fs-4">- IDR 0</h2>
                 </div>
               </div>
