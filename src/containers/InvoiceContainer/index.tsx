@@ -71,7 +71,7 @@ const InvoiceContainer: React.FC = () => {
                 <div className="col-6 offset-1">
                   <h2>Sub Total</h2>
                 </div>
-                <div className="col d-flex justify-content-end total-payment">
+                <div className="col d-flex justify-content-end total-payment fs-3">
                   IDR {calculateTotalPrice}
                 </div>
               </div>
