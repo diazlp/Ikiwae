@@ -101,7 +101,7 @@ const InvoiceContainer: React.FC = () => {
                   <h2>Total</h2>
                 </div>
                 <div className="col d-flex justify-content-end total-payment fs-2">
-                  IDR {calculateTotalPrice}
+                  IDR {Utils.formatCurrency(calculateTotalPrice)}
                 </div>
               </div>
             </div>
