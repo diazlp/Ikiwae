@@ -6,4 +6,3 @@ const InvoicePage: React.FC = () => {
 }
 
 export default InvoicePage
-//
