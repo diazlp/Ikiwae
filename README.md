@@ -1,5 +1,7 @@
 # Ikiwae Application
 
+Step into a world of style and comfort with our FurniQuest App! Explore a vast collection of exquisite furniture pieces curated to suit your taste and lifestyle, available for effortless ordering right from your fingertips.
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
