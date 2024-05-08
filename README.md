@@ -1,6 +1,6 @@
 # Ikiwae Application
 
-Step into a world of style and comfort with our FurniQuest App! Explore a vast collection of exquisite furniture pieces curated to suit your taste and lifestyle, available for effortless ordering right from your fingertips.
+Step into a world of style and comfort with our Ikiwae App! Explore a vast collection of exquisite furniture pieces curated to suit your taste and lifestyle, available for effortless ordering right from your fingertips.
 
 # React + TypeScript + Vite
 
