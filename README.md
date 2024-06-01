@@ -34,3 +34,7 @@ export default {
 - Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
 - Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
 - Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+
+## License
+
+This project is licensed under the [MIT License](https://github.com/diazlp/search-engine-svelte?tab=MIT-1-ov-file). You are permitted to use, modify, and distribute this project for both personal and commercial purposes, provided that the copyright notice **Diaz Linggaputra** remains intact in all copies or substantial portions of the project.
