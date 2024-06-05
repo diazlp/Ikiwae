@@ -1,7 +1,8 @@
 {
   "name": "ikiwae",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "author": "Diaz Linggaputra <diazlinggaputra@gmail.com>",
   "type": "module",
   "scripts": {
     "dev": "vite",
