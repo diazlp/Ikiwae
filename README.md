@@ -8,6 +8,12 @@ Step into a world of style and comfort with our Ikiwae App! Explore a vast colle
 
 ## Table of Contents
 
+## Introduction
+
+Ikiwae is a cutting-edge furniture ecommerce app built using TypeScript and React, ensuring robust performance and maintainability. Enjoy browsing and purchasing furniture hassle-free with our dummy payment feature, designed for effortless user interaction and convenience
+
+## Features
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
