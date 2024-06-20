@@ -22,6 +22,20 @@ Ikiwae is a cutting-edge furniture ecommerce app built using TypeScript and Reac
 
 To set up the Ikiwae Application locally, follow these steps:
 
+1.  Clone the repository:
+
+    `git clone https://github.com/diazlp/Ikiwae`
+
+2.  Navigate into the project directory:
+
+    `cd Ikiwae`
+
+3.  Install dependencies to run the application smoothly:
+
+```
+npm install
+```
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
