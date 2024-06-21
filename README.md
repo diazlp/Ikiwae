@@ -38,6 +38,14 @@ npm install
 
 ## Usage
 
+To run the Ikiwae Application locally, you'll need to start execute below command on your terminal:
+
+```
+npm run dev
+```
+
+Access the frontend application at http://localhost:3000.
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
